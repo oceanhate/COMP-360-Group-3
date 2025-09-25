@@ -5,7 +5,7 @@ Tasks:
 
 Program peaks point generation - Kabir
 
-Program lighting + Camera - Adrea
+Program lighting + Camera - Andrea
 
 Program Textures - Kirat 
 
