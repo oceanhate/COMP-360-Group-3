@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlsx16ywa2d6q"]
+
+[ext_resource type="Script" uid="uid://ccg7e7h716e16" path="res://peak_generation.gd" id="1_a202f"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_a202f")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.7566557, -0.31261566, -0.5742334, 0.016444877, 0.8689052, -0.49470562, 0.6536071, -0.38376483, -0.652321, 22.312666, 20.79632, 28.789827)
+fov = 132.81586
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 4.589652, 0)
