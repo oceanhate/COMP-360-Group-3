@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dljso6sfefmsv"]
+
+[ext_resource type="Script" uid="uid://dbc24vn1y5x" path="res://shape.gd" id="1_noarx"]
+[ext_resource type="Script" uid="uid://drdj1kt65ntdy" path="res://Tetrahedron.gd" id="2_a0tk4"]
+[ext_resource type="Script" uid="uid://bmb5tmibni8ct" path="res://pyramid.gd" id="3_a0tk4"]
+[ext_resource type="Script" uid="uid://cvu57lgq7l6q8" path="res://texture_controller.gd" id="4_r3fl7"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="shape" type="MeshInstance3D" parent="."]
+script = ExtResource("1_noarx")
+
+[node name="tetra" type="MeshInstance3D" parent="shape"]
+script = ExtResource("2_a0tk4")
+
+[node name="pyra" type="MeshInstance3D" parent="shape"]
+script = ExtResource("3_a0tk4")
+
+[node name="Texture_Gen" type="MeshInstance3D" parent="shape"]
+skeleton = NodePath("../..")
+script = ExtResource("4_r3fl7")
