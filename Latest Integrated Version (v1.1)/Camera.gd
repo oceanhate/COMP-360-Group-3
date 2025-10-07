@@ -4,7 +4,7 @@ extends Camera3D
 var cam_fov: float = 60                              # The camera's field of view angle (in degrees)
 var cam_near: float = 50                            # The distance to the near culling boundary for this camera relative to its local Z axis
 var cam_far: float = 1000                            # The distance to the far culling boundary for this camera relative to its local Z axis
-var cam_pos: Vector3 = Vector3(128, 60, -30)
+var cam_pos: Vector3 = Vector3(128, 90, -10)
 var look_at_point: Vector3 = Vector3(128, 6, 128)
 
 func _ready() -> void:

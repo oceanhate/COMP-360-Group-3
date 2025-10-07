@@ -2,8 +2,8 @@ extends Node3D
 
 var grid_size_x: int = 128
 var grid_size_z: int = 128
-var quad_size: float = 2
-var height_scale: float = 35               # Change this to control height of peaks (60 worked best)
+var quad_size: float = 2.0
+var height_scale: float = randf_range(20, 60)       # Change this to control height of peaks (20,60 range worked best)
 
 var noise := FastNoiseLite.new()
 var st := SurfaceTool.new()
@@ -14,7 +14,7 @@ func _ready() -> void:
 	noise.noise_type = FastNoiseLite.TYPE_PERLIN        # Can change TYPE_ type to change hill terrain "shape" (Perlin Default)
 	noise.fractal_type = FastNoiseLite.FRACTAL_FBM      # Can change FRACTAL_ type to change peak "pointyness" (FBM Default)
 	noise.fractal_octaves = 5                           # Higher val for more detail and small ridges (5 Default)
-	noise.frequency = 0.02                              # Lower frequency = smooth hills. Higher frequency = Tighter, more frequent bumps. (Use 0.02 for best results)
+	noise.frequency = 0.02                              # Lower frequency = smooth hills. Higher frequency = Tighter, more frequent bumps. (0.02 worked best)
 
 	st.begin(Mesh.PRIMITIVE_TRIANGLES)
 	_peak_generation()
@@ -53,3 +53,15 @@ func _ground() -> void:                                 # Initializing the grid 
 	# Directional light 3D will be the source of the shadows
 	land.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_ON
 	add_child(land)
+	
+
+	# Creating basic "lava-like" texture
+	var mat = StandardMaterial3D.new()
+	mat.metallic = 0.1
+	mat.roughness = 0.85
+	mat.albedo_color = Color(0.9, 0.438, 0.171, 1.0)
+	mat.emission_energy_multiplier = 2.0
+
+
+# Assign to mesh
+	land.material_override = mat

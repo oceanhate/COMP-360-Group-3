@@ -24,7 +24,9 @@ func generate_noise_material(tex_size: int = 256, scale_factor: float = 8.0, til
 
 	# Create a StandardMaterial3D using this texture
 	var mat = StandardMaterial3D.new()
-	mat.albedo_color = Color(0.263, 0.681, 0.444, 1.0)
+	mat.metallic = 0.1
+	mat.roughness = 0.85
+	mat.albedo_color = Color(0.545, 0.118, 0.118, 1.0)
 	mat.albedo_texture = tex
 	mat.uv1_scale = Vector3(tile_uv, tile_uv, 1.0)
 	return mat
